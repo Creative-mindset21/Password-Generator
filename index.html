@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CUSTOM META TAGS -->
+    <meta name="author" content="Creative Mindset" />
+    <meta
+      name="description"
+      content="A Password Generator using HTML, CSS and JS"
+    />
+
+    <!-- FONT AWESOME LINKING -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- FAVICON LINKING -->
+    <link rel="icon" href="./assets/imgs/favicon.png" type="image/png" />
+
+    <!-- CSS LINKING -->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- TITLE -->
+    <title>Password Generator - Scrimba Project</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="password-input">
+        <h1>Password <br />Generator</h1>
+
+        <div>
+          <!-- INPUT BOX -->
+          <div class="input-box">
+            <p class="password-box" id="password-box"></p>
+
+            <div class="strength-refresh">
+              <!-- PASSWORD STRENGTH BOXES -->
+              <!-- !COMING BACK TO WORK ON THE PASSWORD STRENGTH -->
+              <!-- <div class="password-strength">
+                <div class="aqua"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div> -->
+
+              <!-- REFRESH BUTTON -->
+              <button class="refresh-btn" id="refresh-btn">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </div>
+          </div>
+
+          <button class="copy-btn" id="copy-btn">
+            <span class="btn-text">COPY PASSWORD_</span>
+            <i class="fa-solid fa-arrow-right"></i>
+            <span class="tag">R25</span>
+          </button>
+        </div>
+
+        <div class="range-container">
+          <output id="slider-bubble" class="slider-bubble">18</output>
+          <input
+            type="range"
+            name=""
+            id="password-length"
+            class="password-length"
+            min="8"
+            max="20"
+          />
+        </div>
+
+        <div class="options-checkbox">
+          <label>
+            <input
+              type="checkbox"
+              name="upper"
+              id="upper"
+              class="checked-always"
+            />
+            Uppercase letters
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="lower"
+              id="lower"
+              class="checked-always"
+            />
+            Lowercase letters
+          </label>
+
+          <label>
+            <input type="checkbox" name="numbers" id="numbers" checked />
+            Numbers
+          </label>
+
+          <label>
+            <input type="checkbox" name="symbols" id="symbols" checked />
+            Symbols
+          </label>
+        </div>
+      </div>
+
+      <div class="password-history">
+        <h2>Password History</h2>
+
+        <ul class="password-lists" id="password-lists"></ul>
+
+        <button class="clear-btn" id="clear-btn">Clear History</button>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
