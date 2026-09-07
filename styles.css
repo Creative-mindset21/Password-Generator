@@ -164,7 +164,6 @@ h2 {
         0 calc(100% - 15px)
       );
       cursor: pointer;
-      margin-bottom: 4rem;
 
       .btn-text,
       i {
@@ -187,6 +186,14 @@ h2 {
         letter-spacing: 20%;
         background: var(--body-bg);
       }
+    }
+
+    .copied-text {
+      margin-top: 1.5rem;
+      margin-bottom: 4rem;
+      color: var(--color-yellow);
+      opacity: 0;
+      transition: all 0.3s ease;
     }
 
     .range-container {

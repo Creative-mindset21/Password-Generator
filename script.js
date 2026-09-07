@@ -9,6 +9,7 @@ const copyBtnEl = document.getElementById("copy-btn");
 const refreshBtnEl = document.getElementById("refresh-btn");
 const passwordLists = document.getElementById("password-lists");
 const clearBtnEl = document.getElementById("clear-btn");
+const copiedTextEl = document.getElementById("copied-text");
 const checkedAlways = document.querySelectorAll(".checked-always");
 
 let passwords = JSON.parse(localStorage.getItem("password-history")) || [];
@@ -207,6 +208,26 @@ function clearHistory() {
   passwordLists.innerHTML = "";
   clearBtnEl.style.display = "none";
 }
+
+//! Copy the password with the copy button
+copyBtnEl.addEventListener("click", async () => {
+  const textToCopy = passwordBoxEl.textContent.trim();
+
+  if (!textToCopy) return;
+
+  copiedTextEl.style.opacity = "100";
+
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    copiedTextEl.textContent = "Password Copied";
+  } catch (error) {
+    copiedTextEl.textContent = "Failed to copy password";
+  }
+
+  setTimeout(() => {
+    copiedTextEl.style.opacity = "0";
+  }, 2000);
+});
 
 slider.addEventListener("input", updateBubble);
 refreshBtnEl.addEventListener("click", generatePassword);
