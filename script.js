@@ -10,6 +10,7 @@ const refreshBtnEl = document.getElementById("refresh-btn");
 const passwordLists = document.getElementById("password-lists");
 const clearBtnEl = document.getElementById("clear-btn");
 const copiedTextEl = document.getElementById("copied-text");
+const copyIconEl = document.querySelectorAll("#copy-icon");
 const checkedAlways = document.querySelectorAll(".checked-always");
 
 let passwords = JSON.parse(localStorage.getItem("password-history")) || [];
@@ -44,8 +45,8 @@ function renderHistoryUI() {
     htmlElement += `
      <li>
           <p>${escapeHtml(pass)}</p>
-          <button class="copy-icon">
-            <i class="fa-solid fa-copy"></i>
+          <button class="copy-icon" id="copy-icon">
+            <!-- <i class="fa-solid fa-copy"></i> -->
           </button>
       </li>
     `;
